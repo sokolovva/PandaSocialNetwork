@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Panda
 {
+    using System.Runtime.InteropServices;
+
     public class Class1
     {
+        private string alala;
     }
 }
