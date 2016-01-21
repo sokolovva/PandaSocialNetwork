@@ -1,0 +1,4 @@
+C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\SocialNetwork\bin\Debug\SocialNetwork.dll
+C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\SocialNetwork\bin\Debug\SocialNetwork.pdb
+C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\SocialNetwork\obj\Debug\SocialNetwork.dll
+C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\SocialNetwork\obj\Debug\SocialNetwork.pdb

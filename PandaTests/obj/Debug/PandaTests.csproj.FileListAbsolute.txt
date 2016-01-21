@@ -1,0 +1,7 @@
+C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\PandaTests\bin\Debug\PandaTests.dll
+C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\PandaTests\bin\Debug\PandaTests.pdb
+C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\PandaTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\PandaTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
+C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\PandaTests\obj\Debug\PandaTests.csprojResolveAssemblyReference.cache
+C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\PandaTests\obj\Debug\PandaTests.dll
+C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\PandaTests\obj\Debug\PandaTests.pdb
