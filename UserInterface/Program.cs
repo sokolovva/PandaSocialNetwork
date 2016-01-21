@@ -10,6 +10,7 @@ namespace UserInterface
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("hello");
         }
     }
 }
