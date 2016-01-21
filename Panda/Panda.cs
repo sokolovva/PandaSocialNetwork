@@ -53,8 +53,10 @@
                 {
                     this.email = value;
                 }
-                
-                throw new ArgumentException("ERROR: Invalid E-mail address.");
+                else
+                {
+                    throw new ArgumentException("ERROR: Invalid E-mail address.");
+                }
             }
         }
 

@@ -1,12 +1,52 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PandaTests
+﻿namespace Panda.Tests
 {
-    class PandaTests
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Runtime.InteropServices;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    [TestClass()]
+    public class PandaTests
     {
+        private readonly Panda defaultPanda = new Panda("goshko", "email@gmail.com", Gender.Male);
+
+        [TestMethod()]
+        public void PandaTest()
+        {
+            Assert.AreEqual(defaultPanda, new Panda("goshko","email@gmail.com",Gender.Male));
+        }
+
+        [TestMethod()]
+        public void ToStringTest()
+        {
+            Assert.AreEqual(defaultPanda.ToString(), "goshko");
+        }
+
+        [TestMethod()]
+        public void GetHashCodeTestEquals()
+        {
+            Assert.AreEqual(defaultPanda, new Panda("goshko", "email@gmail.com", Gender.Male));
+        }
+
+        [TestMethod()]
+        public void GetHashCodeTestNotEquals()
+        {
+            Assert.AreNotEqual(defaultPanda, new Panda("goshko", "email@gmail.com", Gender.Female));
+        }
+
+        [TestMethod()]
+        public void EqualsTest()
+        {
+            Assert.IsTrue(defaultPanda.Equals(new Panda("goshko", "email@gmail.com", Gender.Male)));
+        }
+
+        [TestMethod()]
+        public void NotEqualsTest()
+        {
+            Assert.IsFalse(defaultPanda.Equals(new Panda("goshko", "email@gmail.com", Gender.Female)));
+        }
     }
 }

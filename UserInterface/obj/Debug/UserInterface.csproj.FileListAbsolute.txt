@@ -4,3 +4,10 @@ C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\Pan
 C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\UserInterface\bin\Debug\UserInterface.pdb
 C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\UserInterface\obj\Debug\UserInterface.exe
 C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\UserInterface\obj\Debug\UserInterface.pdb
+C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\UserInterface\bin\Debug\FileInteraction.dll
+C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\UserInterface\bin\Debug\Panda.dll
+C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\UserInterface\bin\Debug\SocialNetwork.dll
+C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\UserInterface\bin\Debug\FileInteraction.pdb
+C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\UserInterface\bin\Debug\Panda.pdb
+C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\UserInterface\bin\Debug\SocialNetwork.pdb
+C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\UserInterface\obj\Debug\UserInterface.csprojResolveAssemblyReference.cache
