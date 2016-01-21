@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FileInteraction
+namespace PandaTests
 {
-    public class Class1
+    class PandaTests
     {
     }
 }
