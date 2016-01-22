@@ -25,7 +25,7 @@
                     .Append("connection level/ connectionlevel").AppendLine()
                     .Append("how many gender in network/howmanygenderinnetwork level, panda, gender: prints level-deep pandas from gender-type").AppendLine()
                     .Append("quit/exit : closes the application").AppendLine()
-                    .Append("------------------------------").AppendLine();
+                    .Append("--------------------------------").AppendLine();
             //Console.WriteLine(helpMenu.ToString());
             Console.WriteLine("Welcome to the Panda Social Network (-(-(-.-)-)-)");
             do
