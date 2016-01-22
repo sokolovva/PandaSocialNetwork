@@ -1,6 +1,7 @@
 ﻿namespace UserInterface
 {
     using System;
+    using System.Text;
 
     /// <summary>
     /// Application class.
@@ -12,7 +13,21 @@
         /// </summary>
         public static void Main()
         {
-            Console.WriteLine("Welcome to the Panda Social Network :-)");
+            StringBuilder helpMenu = new StringBuilder();
+            helpMenu.Append("------------------------").AppendLine()
+                    .Append("help : display help menu").AppendLine()
+                    .Append("add panda/addpanda : adds a new panda").AppendLine()
+                    .Append("has panda/haspanda panda : checks if panda exists in the network").AppendLine()
+                    .Append("make friends,makefriends panda1 panda2 : makes 2 pandas friends").AppendLine()
+                    .Append("are friends/ arefriends panda1 panda2: checks if the 2 pandas are friends").AppendLine()
+                    .Append("are connected/ areconnected panda1 panda2: checks if pandas are connected").AppendLine()
+                    .Append("friends of/ friendsof panda: prints the friend list of a panda").AppendLine()
+                    .Append("connection level/ connectionlevel").AppendLine()
+                    .Append("how many gender in network/howmanygenderinnetwork level, panda, gender: prints level-deep pandas from gender-type").AppendLine()
+                    .Append("quit/exit : closes the application").AppendLine()
+                    .Append("------------------------").AppendLine();
+            //Console.WriteLine(helpMenu.ToString());
+            Console.WriteLine("Welcome to the Panda Social Network (-(-(-.-)-)-)");
             do
             {
                 Console.Write("Type an action :");
@@ -22,7 +37,7 @@
                 switch (command[0])
                 {
                     case "help":
-                        // show help menu
+                        Console.WriteLine(helpMenu.ToString());
                         break;
                     case "addpanda":
                         // AddPanda(panda)
@@ -57,6 +72,9 @@
                     case "arefriends":
                         // AreFriends(panda1, panda2)
                         break;
+                    case "areconnected":
+                        // Are connected
+                        break;
                     case "are":
                         if (command[1] == "friends")
                         {
@@ -88,6 +106,9 @@
                             // ConnectionLevel(panda1, panda2)
                         }
 
+                        break;
+                    case "howmanygenderinnetwork":
+                            // HowManyGenderInNetwork(level, panda, gender)
                         break;
                     case "how":
                         if (command[1] == "many" && command[2] == "gender" && command[3] == "in" && command[4] == "network")

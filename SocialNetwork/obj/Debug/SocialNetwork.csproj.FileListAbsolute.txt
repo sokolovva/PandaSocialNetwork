@@ -2,3 +2,6 @@ C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\Pan
 C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\SocialNetwork\bin\Debug\SocialNetwork.pdb
 C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\SocialNetwork\obj\Debug\SocialNetwork.dll
 C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\SocialNetwork\obj\Debug\SocialNetwork.pdb
+C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\SocialNetwork\bin\Debug\Panda.dll
+C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\SocialNetwork\bin\Debug\Panda.pdb
+C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\SocialNetwork\obj\Debug\SocialNetwork.csprojResolveAssemblyReference.cache

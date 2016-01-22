@@ -47,6 +47,7 @@
         public int HowManyGenderInNetwork(int level, Panda panda, Gender gender)
         {
             throw new NotImplementedException();
+            
         }
     }
 }
