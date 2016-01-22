@@ -18,14 +18,14 @@
                     .Append("help : display help menu").AppendLine()
                     .Append("add panda/addpanda : adds a new panda").AppendLine()
                     .Append("has panda/haspanda panda : checks if panda exists in the network").AppendLine()
-                    .Append("make friends,makefriends panda1 panda2 : makes 2 pandas friends").AppendLine()
+                    .Append("make friends/makefriends panda1 panda2 : makes 2 pandas friends").AppendLine()
                     .Append("are friends/ arefriends panda1 panda2: checks if the 2 pandas are friends").AppendLine()
                     .Append("are connected/ areconnected panda1 panda2: checks if pandas are connected").AppendLine()
                     .Append("friends of/ friendsof panda: prints the friend list of a panda").AppendLine()
                     .Append("connection level/ connectionlevel").AppendLine()
                     .Append("how many gender in network/howmanygenderinnetwork level, panda, gender: prints level-deep pandas from gender-type").AppendLine()
                     .Append("quit/exit : closes the application").AppendLine()
-                    .Append("------------------------").AppendLine();
+                    .Append("-------------------------").AppendLine();
             //Console.WriteLine(helpMenu.ToString());
             Console.WriteLine("Welcome to the Panda Social Network (-(-(-.-)-)-)");
             do
