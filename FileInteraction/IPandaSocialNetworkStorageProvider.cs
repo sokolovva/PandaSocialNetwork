@@ -1,4 +1,4 @@
-﻿namespace UserInterface
+﻿namespace FileInteraction
 {
     using System;
     using System.Collections.Generic;
@@ -6,8 +6,8 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public static class InputValidation
+    public interface IPandaSocialNetworkStorageProvider
     {
-        
+
     }
 }

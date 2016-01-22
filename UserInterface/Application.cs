@@ -1,14 +1,15 @@
 ﻿namespace UserInterface
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using Panda;
-    using System.Text;
-    using System.Threading.Tasks;
 
-    public class Program
+    /// <summary>
+    /// Application class.
+    /// </summary>
+    public class Application
     {
+        /// <summary>
+        /// Main method.
+        /// </summary>
         public static void Main()
         {
             Console.WriteLine("Welcome to the Panda Social Network :-)");
