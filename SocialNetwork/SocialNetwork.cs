@@ -8,82 +8,71 @@ namespace SocialNetwork
     using System.Threading.Tasks;
     public class SocialNetwork
     {
-        /// <summary>
-        /// obj=Panda
-        /// </summary>
-        Dictionary<object, Node> PandasInNetwork = new Dictionary<object, Node>();
+        readonly Dictionary<IPanda, Node> pandasInNetwork = new Dictionary<IPanda, Node>();
 
-
-
-        public void AddPanda(object panda)
+        public void AddPanda(IPanda panda)
         {
+            // TODO : check if panda exceptions works legit
             try
             {
-                if (PandasInNetwork.ContainsKey(panda) == false)
+                if (!this.pandasInNetwork.ContainsKey(panda))
                 {
-                    PandasInNetwork.Add(panda, new Node(panda));
+                    this.pandasInNetwork.Add(panda, new Node(panda));
                 }
-
+                else
+                {
+                    throw new PandasAlreadyFriendsException();
+                }
             }
-            // TODO:    PandasAlreadyFriendsException
-            catch (ArgumentException)
+            catch (PandasAlreadyFriendsException)
             {
+                // TODO : remove message below?
                 Console.WriteLine("Panda already has been added");
             }
-
         }
 
-        public bool HasPanda(object panda)
+        public bool HasPanda(IPanda panda)
         {
-            if (PandasInNetwork.ContainsKey(panda))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-
+            return this.pandasInNetwork.ContainsKey(panda);
         }
 
-        public void MakeFriends(object panda1, object panda2)
+        public void MakeFriends(IPanda panda1, IPanda panda2)
         {
             bool notFriends = true;
-            Node friendNode1, friendNode2;
-            if (!(PandasInNetwork.ContainsKey(panda1)))
+            Node friendNode1;
+            Node friendNode2;
+            if (!(this.pandasInNetwork.ContainsKey(panda1)))
             {
                 friendNode1 = new Node(panda1);
-                PandasInNetwork.Add(panda1, friendNode1);
+                this.pandasInNetwork.Add(panda1, friendNode1);
                 notFriends = !notFriends;
             }
             else
             {
-                friendNode1 = PandasInNetwork[panda1];
+                friendNode1 = this.pandasInNetwork[panda1];
             }
-            if (!(PandasInNetwork.ContainsKey(panda2)))
+            if (!(this.pandasInNetwork.ContainsKey(panda2)))
             {
                 friendNode2 = new Node(panda2);
-                PandasInNetwork.Add(panda2, friendNode2);
+                this.pandasInNetwork.Add(panda2, friendNode2);
                 notFriends = !notFriends;
             }
             else
             {
-                friendNode2 = PandasInNetwork[panda2];
+                friendNode2 = this.pandasInNetwork[panda2];
 
             }
 
             if (notFriends)
             {
-                friendNode1.PandasFriends1.Add(friendNode2);
-                friendNode2.PandasFriends1.Add(friendNode1);
+                friendNode1.PandasFriends.Add(friendNode2);
+                friendNode2.PandasFriends.Add(friendNode1);
             }
-            else throw new ArgumentException("Already friends!");
 
-
+            throw new PandasAlreadyFriendsException();
         }
-
-
-        public bool AreFriend(object panda1, object panda2)
+        
+        public bool AreFriend(IPanda panda1, IPanda panda2)
         {
             /*bool notFriends = true;
              Node friendNode1, friendNode2;
@@ -92,50 +81,47 @@ namespace SocialNetwork
              nopenopenope TODOOO
 
              }*/
-
             return true;
-
         }
 
-
-
-
+        // TODO : class node set to private/internal ?
         public class Node
         {
-            private object panda;
-            private HashSet<Node> PandasFriends;
+            private IPanda panda;
 
-            public object Panda1
-            {
-                get
-                {
-                    return panda;
-                }
+            private HashSet<Node> pandasFriends;
 
-                set
-                {
-                    panda = value;
-                }
-            }
-
-            internal HashSet<Node> PandasFriends1
-            {
-                get
-                {
-                    return PandasFriends;
-                }
-
-                set
-                {
-                    PandasFriends = value;
-                }
-            }
-            public Node(object panda)
+            public Node(IPanda panda)
             {
                 this.panda = panda;
-                PandasFriends = new HashSet<Node>();
+                this.pandasFriends = new HashSet<Node>();
             }
 
+            public IPanda Panda1
+            {
+                get
+                {
+                    return this.panda;
+                }
+
+                set
+                {
+                    this.panda = value;
+                }
+            }
+
+            internal HashSet<Node> PandasFriends
+            {
+                get
+                {
+                    return this.pandasFriends;
+                }
+
+                set
+                {
+                    this.pandasFriends = value;
+                }
+            }
         }
     }
 }
