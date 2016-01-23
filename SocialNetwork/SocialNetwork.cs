@@ -36,45 +36,47 @@ namespace SocialNetwork
             return this.pandasInNetwork.ContainsKey(panda);
         }
 
+        // TODO : check logic - add pandas as friends rather Nodes?
         public void MakeFriends(IPanda panda1, IPanda panda2)
         {
-            bool notFriends = true;
             Node friendNode1;
             Node friendNode2;
             if (!(this.pandasInNetwork.ContainsKey(panda1)))
             {
                 friendNode1 = new Node(panda1);
                 this.pandasInNetwork.Add(panda1, friendNode1);
-                notFriends = !notFriends;
             }
             else
             {
                 friendNode1 = this.pandasInNetwork[panda1];
             }
+
             if (!(this.pandasInNetwork.ContainsKey(panda2)))
             {
                 friendNode2 = new Node(panda2);
                 this.pandasInNetwork.Add(panda2, friendNode2);
-                notFriends = !notFriends;
             }
             else
             {
                 friendNode2 = this.pandasInNetwork[panda2];
 
             }
-
-            if (notFriends)
+            // TODO : fix check for already friends
+            if (true)
             {
                 friendNode1.PandasFriends.Add(friendNode2);
                 friendNode2.PandasFriends.Add(friendNode1);
             }
-
-            throw new PandasAlreadyFriendsException();
+            else
+            {
+                throw new PandasAlreadyFriendsException();
+            }
         }
-        
+
+        // TODO : logic - check if panda1 is in panda2's friends list and vice-versa
         public bool AreFriend(IPanda panda1, IPanda panda2)
         {
-            /*bool notFriends = true;
+            /*bool IsFriend = true;
              Node friendNode1, friendNode2;
              if (PandasInNetwork.ContainsKey(panda1)&& PandasInNetwork.ContainsValue(friendNode1)))
              {
@@ -89,6 +91,7 @@ namespace SocialNetwork
         {
             private IPanda panda;
 
+            // TODO : HashSet of pandas instead of Nodes?
             private HashSet<Node> pandasFriends;
 
             public Node(IPanda panda)
@@ -97,7 +100,7 @@ namespace SocialNetwork
                 this.pandasFriends = new HashSet<Node>();
             }
 
-            public IPanda Panda1
+            public IPanda Panda
             {
                 get
                 {
@@ -110,6 +113,7 @@ namespace SocialNetwork
                 }
             }
 
+            // TODO : same as field - HashSet<Node> or HashSet<Panda> ?
             internal HashSet<Node> PandasFriends
             {
                 get
