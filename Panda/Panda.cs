@@ -13,7 +13,7 @@
         Female
     }
 
-    public class Panda
+    public class Panda : IPanda
     {
         private string name;
 
