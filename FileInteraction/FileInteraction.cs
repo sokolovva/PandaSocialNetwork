@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FileInteraction
 {
-    class FileInteraction
+    public class FileInteraction
     {
     }
 }

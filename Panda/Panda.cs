@@ -37,6 +37,11 @@
             set
             {
                 // TODO : add validation if requiered.
+                if (String.IsNullOrEmpty(value))
+                {
+                   throw new ArgumentNullException("ERROR: Name cannot be null or empty!");
+                }
+
                 this.name = value;
             }
         }
@@ -49,6 +54,11 @@
             }
             set
             {
+                if (value == null)
+                {
+                    throw new ArgumentNullException();
+                }
+
                 if (this.IsValidEmail(value))
                 {
                     this.email = value;
@@ -88,6 +98,8 @@
                 return this.gender == Gender.Female;
             }
         }
+
+        public List<Panda> Friends { get; private set; }
 
         public override string ToString()
         {

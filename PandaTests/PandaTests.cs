@@ -48,5 +48,11 @@
         {
             Assert.IsFalse(defaultPanda.Equals(new Panda("goshko", "email@gmail.com", Gender.Female)));
         }
+
+        [TestMethod(),ExpectedException(typeof(ArgumentNullException))]
+        public void NullParameters()
+        {
+            var panda = new Panda("as", null, Gender.Male);
+        }
     }
 }
