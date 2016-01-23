@@ -1,5 +1,0 @@
-C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\FileInteraction\bin\Debug\FileInteraction.dll
-C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\FileInteraction\bin\Debug\FileInteraction.pdb
-C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\FileInteraction\obj\Debug\FileInteraction.csprojResolveAssemblyReference.cache
-C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\FileInteraction\obj\Debug\FileInteraction.dll
-C:\Users\Viktor\Documents\Visual Studio 2015\Projects\SocialNetworkForPandas\PandaSocialNetwork\PandaSocialNetwork\FileInteraction\obj\Debug\FileInteraction.pdb
