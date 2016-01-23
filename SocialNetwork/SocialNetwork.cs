@@ -1,27 +1,19 @@
-<<<<<<< HEAD
-﻿
-
 namespace SocialNetwork
 {
-=======
-﻿namespace SocialNetwork
-{
     using Panda;
->>>>>>> ee49110b930eba5d110221a2b279dcfab09b33aa
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
-<<<<<<< HEAD
     public class SocialNetwork
     {
         /// <summary>
         /// obj=Panda
         /// </summary>
-        Dictionary<object, Node> PandasInNetwork=new Dictionary<object, Node> ();
+        Dictionary<object, Node> PandasInNetwork = new Dictionary<object, Node>();
 
-        
+
 
         public void AddPanda(object panda)
         {
@@ -38,7 +30,7 @@ namespace SocialNetwork
             {
                 Console.WriteLine("Panda already has been added");
             }
-           
+
         }
 
         public bool HasPanda(object panda)
@@ -76,10 +68,10 @@ namespace SocialNetwork
             }
             else
             {
-               friendNode2 = PandasInNetwork[panda2];
-                
+                friendNode2 = PandasInNetwork[panda2];
+
             }
-           
+
             if (notFriends)
             {
                 friendNode1.PandasFriends1.Add(friendNode2);
@@ -93,13 +85,13 @@ namespace SocialNetwork
 
         public bool AreFriend(object panda1, object panda2)
         {
-           /*bool notFriends = true;
-            Node friendNode1, friendNode2;
-            if (PandasInNetwork.ContainsKey(panda1)&& PandasInNetwork.ContainsValue(friendNode1)))
-            {
-            nopenopenope TODOOO
+            /*bool notFriends = true;
+             Node friendNode1, friendNode2;
+             if (PandasInNetwork.ContainsKey(panda1)&& PandasInNetwork.ContainsValue(friendNode1)))
+             {
+             nopenopenope TODOOO
 
-            }*/
+             }*/
 
             return true;
 
@@ -145,51 +137,6 @@ namespace SocialNetwork
             }
 
         }
-      
-=======
-
-    public class SocialNetwork
-    {
-        public void AddPanda(Panda panda)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool HasPanda(Panda panda)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void MakeFriends(Panda panda1, Panda panda2)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool AreFriends(Panda panda1, Panda panda2)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Panda> FriendsOf(Panda panda )
-        {
-            throw new NotImplementedException();
-        }
-
-        public int ConnectionLevel(Panda panda1, Panda panda2)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool AreConnected(Panda panda1, Panda panda2)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int HowManyGenderInNetwork(int level, Panda panda, Gender gender)
-        {
-            throw new NotImplementedException();
-            
->>>>>>> ee49110b930eba5d110221a2b279dcfab09b33aa
-        }
     }
+}
 

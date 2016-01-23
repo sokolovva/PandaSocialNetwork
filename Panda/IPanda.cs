@@ -14,9 +14,9 @@
 
         Gender Gender { get; set; }
 
-        bool IsMale { get; set; }
+        bool IsMale { get;}
 
-        bool IsFemale { get; set; }
+        bool IsFemale { get; }
 
 
     }
