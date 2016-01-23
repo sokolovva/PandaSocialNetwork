@@ -2,6 +2,7 @@
 {
     using System;
     using System.Text;
+    using Panda;
 
     /// <summary>
     /// Application class.
@@ -12,6 +13,15 @@
         /// Main method.
         /// </summary>
         public static void Main()
+        {
+            var p = new Panda("asas", "asd", Gender.Male);
+            SocialNetwork();
+        }
+
+        /// <summary>
+        /// Executes the whole program
+        /// </summary>
+        private static void SocialNetwork()
         {
             StringBuilder helpMenu = new StringBuilder();
             helpMenu.Append("------------------------").AppendLine()
@@ -108,7 +118,7 @@
 
                         break;
                     case "howmanygenderinnetwork":
-                            // HowManyGenderInNetwork(level, panda, gender)
+                        // HowManyGenderInNetwork(level, panda, gender)
                         break;
                     case "how":
                         if (command[1] == "many" && command[2] == "gender" && command[3] == "in" && command[4] == "network")

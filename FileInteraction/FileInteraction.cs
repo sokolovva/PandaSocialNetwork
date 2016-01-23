@@ -6,7 +6,28 @@ using System.Threading.Tasks;
 
 namespace FileInteraction
 {
-    public class FileInteraction
+    using System.IO;
+
+    using SocialNetwork;
+
+    [Serializable]
+    public class FileInteraction : IPandaSocialNetworkStorageProvider
     {
+        // TODO : implement writing
+        public bool Save(SocialNetwork network)
+        {
+            StreamWriter str = new StreamWriter("..\\..\\..\\Network.txt");
+            using (str)
+            {
+                str.WriteLine();
+            }
+
+            return true;
+        }
+
+        public SocialNetwork Load()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

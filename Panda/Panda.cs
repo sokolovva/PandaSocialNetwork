@@ -2,25 +2,48 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Runtime.InteropServices;
-    using System.Text;
-    using System.Threading.Tasks;
 
+    /// <summary>
+    /// List of gender types.
+    /// </summary>
     public enum Gender
     {
         Male,
         Female
     }
 
+    /// <summary>
+    /// Panda class.
+    /// </summary>
     public class Panda : IPanda
     {
+        /// <summary>
+        /// Name field.
+        /// </summary>
         private string name;
 
+        /// <summary>
+        /// Email field.
+        /// </summary>
         private string email;
 
+        /// <summary>
+        /// Gender field.
+        /// </summary>
         private Gender gender;
 
+        // TODO : list of pandas needed?
+        /// <summary>
+        /// Gets the friends of a panda property.
+        /// </summary>
+        public List<Panda> Friends { get; private set; }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Panda"/> class.
+        /// </summary>
+        /// <param name="name">Sets the Name property.</param>
+        /// <param name="email">Sets the Email property.</param>
+        /// <param name="gender">Sets the gender property.</param>
         public Panda(string name, string email, Gender gender)
         {
             this.Name = name;
@@ -28,6 +51,9 @@
             this.Gender = gender;
         }
 
+        /// <summary>
+        /// Gets or sets the Name property.
+        /// </summary>
         public string Name
         {
             get
@@ -46,6 +72,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the Email property.
+        /// </summary>
         public string Email
         {
             get
@@ -70,6 +99,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the gender property.
+        /// </summary>
         public Gender Gender
         {
             get
@@ -83,6 +115,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets the isMale property.
+        /// </summary>
         public bool IsMale
         {
             get
@@ -91,6 +126,9 @@
             }
         }
 
+        /// <summary>
+        /// Gets the IsFemale property.
+        /// </summary>
         public bool IsFemale
         {
             get
@@ -99,20 +137,34 @@
             }
         }
 
-        public List<Panda> Friends { get; private set; }
-
+        /// <summary>
+        /// Overrides ToString() method for Panda class.
+        /// </summary>
+        /// <returns>Panda class ot string.</returns>
         public override string ToString()
         {
             return string.Format("{0}", this.name);
         }
 
+        /// <summary>
+        /// Gets hashcode for a panda.
+        /// </summary>
+        /// <returns>Hash code of a panda.</returns>
         public override int GetHashCode()
         {
-            int result = 83 * this.name.GetHashCode();
-            result = 43 * this.email.GetHashCode();
-            return result;
+            unchecked
+            {
+                int result = 83 * this.name.GetHashCode();
+                result = 43 * this.email.GetHashCode();
+                return result;
+            }
         }
 
+        /// <summary>
+        /// Overrides the Equals() method for a panda.
+        /// </summary>
+        /// <param name="obj">Object to compare with.</param>
+        /// <returns>True if <![CDATA[obj]]> Equals the panda object.</returns>
         public override bool Equals(object obj)
         {
             if (obj == null)
@@ -133,12 +185,17 @@
             return false;
         }
 
-        private bool IsValidEmail(string email)
+        /// <summary>
+        /// Checks if email is valid.
+        /// </summary>
+        /// <param name="emailToCheck">Email to check.</param>
+        /// <returns>True if email is valid.</returns>
+        private bool IsValidEmail(string emailToCheck)
         {
             try
             {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == email;
+                var addr = new System.Net.Mail.MailAddress(emailToCheck);
+                return addr.Address == emailToCheck;
             }
             catch
             {
