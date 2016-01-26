@@ -3,6 +3,7 @@
     using System;
     using System.Text;
     using Panda;
+    using SocialNetwork;
 
     /// <summary>
     /// Application class.
@@ -14,7 +15,6 @@
         /// </summary>
         public static void Main()
         {
-            var p = new Panda("asas", "asd", Gender.Male);
             SocialNetwork();
         }
 
@@ -23,6 +23,7 @@
         /// </summary>
         private static void SocialNetwork()
         {
+            SocialNetwork pandaBook = new SocialNetwork();
             StringBuilder helpMenu = new StringBuilder();
             helpMenu.Append("------------------------").AppendLine()
                     .Append("help : display help menu").AppendLine()
@@ -50,22 +51,18 @@
                         Console.WriteLine(helpMenu.ToString());
                         break;
                     case "addpanda":
-                        // AddPanda(panda)
+                        PandaCreation(command,ref pandaBook);
                         break;
                     case "add":
-                        if (command[1] == "panda")
-                        {
-                            // AddPanda(panda)
-                        }
-
+                        PandaCreation(command,ref pandaBook);
                         break;
                     case "haspanda":
-                        // HasPanda(panda)
+                        HasPanda(command,ref pandaBook);
                         break;
                     case "has":
                         if (command[1] == "panda")
                         {
-                            // HasPanda(panda)
+                            HasPanda(command, ref pandaBook);
                         }
 
                         break;
@@ -137,6 +134,38 @@
                 }
             }
             while (true);
+        }
+
+        static void PandaCreation(string[] command,ref SocialNetwork pandaBook)
+        {
+            if (command[3] == "male")
+            {
+                pandaBook.AddPanda(new Panda(command[1], command[2], Gender.Male));
+            }
+            else if (command[3] == " female")
+            {
+                pandaBook.AddPanda(new Panda(command[1], command[2], Gender.Female));
+            }
+            else
+            {
+                throw new ArgumentException("Invalide gender");
+            }
+        }
+
+        private static void HasPanda(string[] command, ref SocialNetwork pandaBook)
+        {
+            if (command[3] == "male")
+            {
+                pandaBook.HasPanda(new Panda(command[1], command[2], Gender.Male));
+            }
+            else if (command[3] == " female")
+            {
+                pandaBook.HasPanda(new Panda(command[1], command[2], Gender.Female));
+            }
+            else
+            {
+                throw new ArgumentException("Invalide gender");
+            }
         }
     }
 }

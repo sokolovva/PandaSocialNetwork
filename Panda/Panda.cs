@@ -36,7 +36,7 @@
         /// <summary>
         /// Gets the friends of a panda property.
         /// </summary>
-        public List<Panda> Friends { get; private set; }
+        //public List<Panda> Friends { get; private set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Panda"/> class.

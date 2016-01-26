@@ -29,7 +29,5 @@
         /// Gets the IsFemale property.
         /// </summary>
         bool IsFemale { get; }
-
-
     }
 }
