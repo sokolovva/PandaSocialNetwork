@@ -17,9 +17,6 @@
         /// </summary>
         public static void Main()
         {
-            List<int> nums = new List<int>() {1,2,3};
-            List<int> nums2 = new List<int>() {0,2,3};
-            Console.WriteLine(Enumerable.SequenceEqual(nums.OrderBy(x => x), nums2.OrderBy(y => y)));
             //SocialNetwork();
         }
 
