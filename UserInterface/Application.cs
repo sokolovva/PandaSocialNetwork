@@ -1,6 +1,8 @@
 ﻿namespace UserInterface
 {
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
     using System.Text;
     using Panda;
     using SocialNetwork;
@@ -15,7 +17,10 @@
         /// </summary>
         public static void Main()
         {
-            SocialNetwork();
+            List<int> nums = new List<int>() {1,2,3};
+            List<int> nums2 = new List<int>() {0,2,3};
+            Console.WriteLine(Enumerable.SequenceEqual(nums.OrderBy(x => x), nums2.OrderBy(y => y)));
+            //SocialNetwork();
         }
 
         /// <summary>
@@ -25,7 +30,7 @@
         {
             SocialNetwork pandaBook = new SocialNetwork();
             StringBuilder helpMenu = new StringBuilder();
-            helpMenu.Append("------------------------").AppendLine()
+            helpMenu.Append("--------------------------").AppendLine()
                     .Append("help : display help menu").AppendLine()
                     .Append("add panda/addpanda : adds a new panda").AppendLine()
                     .Append("has panda/haspanda panda : checks if panda exists in the network").AppendLine()

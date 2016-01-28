@@ -155,7 +155,7 @@
             unchecked
             {
                 int result = 83 * this.name.GetHashCode();
-                result = 43 * this.email.GetHashCode();
+                result = result * 43 * this.email.GetHashCode();
                 return result;
             }
         }

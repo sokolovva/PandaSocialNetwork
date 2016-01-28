@@ -87,11 +87,26 @@
         [TestMethod()]
         public void FriendsOfTest()
         {
-            Assert.Fail();
+            SocialNetwork socialnetwork = new SocialNetwork();
+            Panda panda = new Panda("goshko", "goshko@gmail.com", Gender.Male);
+            Panda panda2 = new Panda("goshko2", "goshko@gmail.com", Gender.Male);
+            Panda panda3 = new Panda("goshko3", "goshko@gmail.com", Gender.Male);
+            Panda panda4 = new Panda("goshko4", "goshko4@gmail.com", Gender.Male);
+            socialnetwork.AddPanda(panda);
+            socialnetwork.AddPanda(panda2);
+            socialnetwork.AddPanda(panda3);
+            socialnetwork.AddPanda(panda4);
+
+            socialnetwork.MakeFriends(panda, panda2);
+            socialnetwork.MakeFriends(panda, panda3);
+            socialnetwork.MakeFriends(panda,panda4);
+            List<IPanda> friends = socialnetwork.FriendsOf(panda).ToList();
+            var expected = new List<IPanda> { panda2, panda3, panda4 };
+            Assert.IsTrue(Enumerable.SequenceEqual(expected.OrderBy(x => x.Name), friends.OrderBy(y => y.Name)));
         }
 
         [TestMethod()]
-        public void ConnectionLevelTest()
+        public void ConnectionLevel2()
         {
             SocialNetwork socialnetwork = new SocialNetwork();
             Panda panda = new Panda("goshko", "goshko@gmail.com", Gender.Male);
@@ -104,6 +119,24 @@
             socialnetwork.MakeFriends(panda, panda2);
             socialnetwork.MakeFriends(panda2, panda3);
             Assert.AreEqual(socialnetwork.ConnectionLevel(panda, panda3), 2);
+        }
+
+        [TestMethod()]
+        public void ConnectionLevel3()
+        {
+            SocialNetwork socialnetwork = new SocialNetwork();
+            Panda panda = new Panda("goshko", "goshko@gmail.com", Gender.Male);
+            Panda panda2 = new Panda("goshko2", "goshko@gmail.com", Gender.Male);
+            Panda panda3 = new Panda("goshko3", "goshko@gmail.com", Gender.Male);
+            Panda panda4 = new Panda("goshko4", "goshko4@gmail.com", Gender.Female);
+            socialnetwork.AddPanda(panda);
+            socialnetwork.AddPanda(panda2);
+            socialnetwork.AddPanda(panda3);
+
+            socialnetwork.MakeFriends(panda, panda2);
+            socialnetwork.MakeFriends(panda2, panda3);
+            socialnetwork.MakeFriends(panda3, panda4);
+            Assert.AreEqual(socialnetwork.ConnectionLevel(panda, panda4), 3);
         }
     }
 }

@@ -36,7 +36,7 @@ namespace SocialNetwork
                 throw new PandasMustBeDifferentException();
             }
 
-            if (!(this.pandasInNetwork.ContainsKey(panda1)))
+            if (!this.pandasInNetwork.ContainsKey(panda1))
             {
                 this.pandasInNetwork.Add(panda1, new List<int>());
             }
@@ -68,6 +68,12 @@ namespace SocialNetwork
             return this.pandasInNetwork[panda1].Contains(panda2.GetHashCode());
         }
 
+        public IEnumerable<IPanda> FirendsOf(IPanda panda)
+        {
+            var neighbours = this.pandasInNetwork.Select(x => x.Key).Where(y => this.pandasInNetwork[panda].Contains(y.GetHashCode()));
+            return neighbours;
+        }
+
         public IEnumerable<IPanda> FriendsOf(IPanda panda)
         {
             var friends = from pandas in this.pandasInNetwork.Keys
@@ -84,16 +90,18 @@ namespace SocialNetwork
                 throw new PandasMustBeDifferentException();
             }
 
-            int counter = 1;
+            int counter = 0;
             var queue = new Queue<IPanda>();
             List<IPanda> visited = new List<IPanda>();
 
+            visited.Add(panda1);
             queue.Enqueue(panda1);
             while (queue.Count > 0)
             {
                 IPanda currPanda = queue.Dequeue();
                 if (currPanda.Equals(panda2))
                 {
+                    Console.WriteLine(counter);
                     return counter;
                 }
 
