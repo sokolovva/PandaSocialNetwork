@@ -17,7 +17,8 @@
         /// </summary>
         public static void Main()
         {
-            //SocialNetwork();
+            Console.WriteLine("asdad");
+            SocialNetwork();
         }
 
         /// <summary>
