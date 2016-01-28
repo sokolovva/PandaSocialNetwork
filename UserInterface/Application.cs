@@ -25,7 +25,7 @@
         {
             SocialNetwork pandaBook = new SocialNetwork();
             StringBuilder helpMenu = new StringBuilder();
-            helpMenu.Append("------------------------").AppendLine()
+            helpMenu.Append("-------------------------").AppendLine()
                     .Append("help : display help menu").AppendLine()
                     .Append("add panda/addpanda : adds a new panda").AppendLine()
                     .Append("has panda/haspanda panda : checks if panda exists in the network").AppendLine()

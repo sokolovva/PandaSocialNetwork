@@ -7,27 +7,20 @@ namespace SocialNetwork
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+
     public class SocialNetwork
     {
-        readonly Dictionary<IPanda, List<int>> pandasInNetwork = new Dictionary<IPanda, List<int>>();
+        readonly Dictionary<IPanda, IList<int>> pandasInNetwork = new Dictionary<IPanda, IList<int>>();
 
         public void AddPanda(IPanda panda)
         {
-            try
+            if (!this.pandasInNetwork.ContainsKey(panda))
             {
-                if (!this.pandasInNetwork.ContainsKey(panda))
-                {
-                    this.pandasInNetwork.Add(panda, new List<int>());
-                }
-                else
-                {
-                    throw new PandasAlreadyExists();
-                }
+                this.pandasInNetwork.Add(panda, new List<int>());
             }
-            catch (PandasAlreadyFriendsException)
+            else
             {
-                // TODO : remove message below?
-                Console.WriteLine("Panda already has been added");
+                throw new PandasAlreadyExists();
             }
         }
 
@@ -36,10 +29,13 @@ namespace SocialNetwork
             return this.pandasInNetwork.ContainsKey(panda);
         }
 
-        // TODO : check logic - add pandas as friends rather Nodes?
         public void MakeFriends(IPanda panda1, IPanda panda2)
         {
-            // TODO : check which panda misses
+            if (panda1.Equals(panda2))
+            {
+                throw new PandasMustBeDifferentException();
+            }
+
             if (!(this.pandasInNetwork.ContainsKey(panda1)))
             {
                 this.pandasInNetwork.Add(panda1, new List<int>());
@@ -62,17 +58,59 @@ namespace SocialNetwork
             }
         }
 
-        // TODO : logic - check if panda1 is in panda2's friends list and vice-versa
-        public bool AreFriend(IPanda panda1, IPanda panda2)
+        public bool AreFriends(IPanda panda1, IPanda panda2)
         {
-            /*bool IsFriend = true;
-             Node friendNode1, friendNode2;
-             if (PandasInNetwork.ContainsKey(panda1)&& PandasInNetwork.ContainsValue(friendNode1)))
-             {
-             nopenopenope TODOOO
+            if (panda1.Equals(panda2))
+            {
+                throw new PandasMustBeDifferentException();
+            }
 
-             }*/
-            return true;
+            return this.pandasInNetwork[panda1].Contains(panda2.GetHashCode());
+        }
+
+        public IEnumerable<IPanda> FriendsOf(IPanda panda)
+        {
+            var friends = from pandas in this.pandasInNetwork.Keys
+                          join hash in this.pandasInNetwork[panda]
+                          on pandas.GetHashCode() equals hash
+                          select pandas;
+            return friends;
+        }
+
+        public int ConnectionLevel(IPanda panda1, IPanda panda2)
+        {
+            if (panda1.Equals(panda2))
+            {
+                throw new PandasMustBeDifferentException();
+            }
+
+            int counter = 1;
+            var queue = new Queue<IPanda>();
+            List<IPanda> visited = new List<IPanda>();
+
+            queue.Enqueue(panda1);
+            while (queue.Count > 0)
+            {
+                IPanda currPanda = queue.Dequeue();
+                if (currPanda.Equals(panda2))
+                {
+                    return counter;
+                }
+
+                foreach (int hash in this.pandasInNetwork[currPanda])
+                {
+                    var neighbours = this.pandasInNetwork.Select(x => x.Key).Where(y => y.GetHashCode() == hash).ToList();
+                    foreach (IPanda neighbour in neighbours.Where(neighbour => !visited.Contains(neighbour)))
+                    {
+                        visited.Add(neighbour);
+                        queue.Enqueue(neighbour);
+                    }
+                }
+
+                counter++;
+            }
+
+            return -1;
         }
     }
 }
