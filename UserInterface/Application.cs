@@ -18,14 +18,16 @@
         /// </summary>
         public static void Main()
         {
-            SocialNetwork socialnetwork = new SocialNetwork();
-            Panda panda = new Panda("goshko", "goshko@gmail.com", Gender.Male);
-            Panda panda2 = new Panda("goshko2", "goshko@gmail.com", Gender.Male);
-            socialnetwork.AddPanda(panda);
-            socialnetwork.AddPanda(panda2);
+            // TODO : Save and load panda connections
+            // TODO : Unit Tests
+            //SocialNetwork socialnetwork = new SocialNetwork();
+            //Panda panda = new Panda("goshko", "goshko@gmail.com", Gender.Male);
+            //Panda panda2 = new Panda("goshko2", "goshko@gmail.com", Gender.Male);
+            //socialnetwork.AddPanda(panda);
+            //socialnetwork.AddPanda(panda2);
 
-            JSONStorageProvider save = new JSONStorageProvider();
-            save.Save(socialnetwork);
+            //JSONStorageProvider save = new JSONStorageProvider();
+            //save.Save(socialnetwork);
            // SocialNetwork();
         }
 
