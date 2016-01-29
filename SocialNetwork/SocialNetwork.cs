@@ -91,34 +91,56 @@ namespace SocialNetwork
             }
 
             int counter = 0;
-            var queue = new Queue<IPanda>();
-            List<IPanda> visited = new List<IPanda>();
+            var queue = new Queue<PandasWithLevel>();
+            List<int> visited = new List<int>();
 
-            visited.Add(panda1);
-            queue.Enqueue(panda1);
+            visited.Add(panda1.GetHashCode());
+            queue.Enqueue(new PandasWithLevel(panda1.GetHashCode(), 0));
             while (queue.Count > 0)
             {
-                IPanda currPanda = queue.Dequeue();
-                if (currPanda.Equals(panda2))
+                PandasWithLevel currPanda = queue.Dequeue();
+                if (currPanda.PandaHash.Equals(panda2.GetHashCode()))
                 {
-                    Console.WriteLine(counter);
-                    return counter;
+                    //Console.WriteLine(counter);
+                    return currPanda.Level;
                 }
 
-                foreach (int hash in this.pandasInNetwork[currPanda])
+                //var neighbours = this.pandasInNetwork.Select(x => x.Key).Where(y => y.GetHashCode() == hash).ToList();
+                IList<int> neighbours = new List<int>();
+                foreach (var panda in this.pandasInNetwork.Keys)
                 {
-                    var neighbours = this.pandasInNetwork.Select(x => x.Key).Where(y => y.GetHashCode() == hash).ToList();
-                    foreach (IPanda neighbour in neighbours.Where(neighbour => !visited.Contains(neighbour)))
+                    if (currPanda.PandaHash == panda.GetHashCode())
                     {
-                        visited.Add(neighbour);
-                        queue.Enqueue(neighbour);
+                        neighbours = this.pandasInNetwork[panda];
                     }
                 }
 
-                counter++;
+                foreach (int hash in neighbours.Where(neighbour => !visited.Contains(neighbour)))
+                {
+                    visited.Add(hash);
+                    queue.Enqueue(new PandasWithLevel(hash.GetHashCode(), currPanda.Level + 1));
+                }
             }
 
             return -1;
+        }
+
+        public IList<IPanda> GetPandas()
+        {
+            return this.pandasInNetwork.Keys.ToList();
+        }
+
+        private class PandasWithLevel
+        {
+            public readonly int PandaHash;
+
+            public readonly int Level;
+
+            public PandasWithLevel(int pandaHash, int level)
+            {
+                this.PandaHash = pandaHash;
+                this.Level = level;
+            }
         }
     }
 }

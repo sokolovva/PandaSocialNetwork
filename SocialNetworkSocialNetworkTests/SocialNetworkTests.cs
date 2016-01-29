@@ -92,10 +92,6 @@
             Panda panda2 = new Panda("goshko2", "goshko@gmail.com", Gender.Male);
             Panda panda3 = new Panda("goshko3", "goshko@gmail.com", Gender.Male);
             Panda panda4 = new Panda("goshko4", "goshko4@gmail.com", Gender.Male);
-            socialnetwork.AddPanda(panda);
-            socialnetwork.AddPanda(panda2);
-            socialnetwork.AddPanda(panda3);
-            socialnetwork.AddPanda(panda4);
 
             socialnetwork.MakeFriends(panda, panda2);
             socialnetwork.MakeFriends(panda, panda3);
@@ -112,9 +108,6 @@
             Panda panda = new Panda("goshko", "goshko@gmail.com", Gender.Male);
             Panda panda2 = new Panda("goshko2", "goshko@gmail.com", Gender.Male);
             Panda panda3 = new Panda("goshko3", "goshko@gmail.com", Gender.Male);
-            socialnetwork.AddPanda(panda);
-            socialnetwork.AddPanda(panda2);
-            socialnetwork.AddPanda(panda3);
 
             socialnetwork.MakeFriends(panda, panda2);
             socialnetwork.MakeFriends(panda2, panda3);
@@ -129,14 +122,28 @@
             Panda panda2 = new Panda("goshko2", "goshko@gmail.com", Gender.Male);
             Panda panda3 = new Panda("goshko3", "goshko@gmail.com", Gender.Male);
             Panda panda4 = new Panda("goshko4", "goshko4@gmail.com", Gender.Female);
-            socialnetwork.AddPanda(panda);
-            socialnetwork.AddPanda(panda2);
-            socialnetwork.AddPanda(panda3);
 
             socialnetwork.MakeFriends(panda, panda2);
             socialnetwork.MakeFriends(panda2, panda3);
             socialnetwork.MakeFriends(panda3, panda4);
-            Assert.AreEqual(socialnetwork.ConnectionLevel(panda, panda4), 3);
+            Assert.AreEqual(socialnetwork.ConnectionLevel(panda2, panda3), 1);
+        }
+
+        [TestMethod()]
+        public void ConnectionLevel4()
+        {
+            SocialNetwork socialnetwork = new SocialNetwork();
+            Panda panda = new Panda("goshko", "goshko@gmail.com", Gender.Male);
+            Panda panda2 = new Panda("goshko2", "goshko@gmail.com", Gender.Male);
+            Panda panda3 = new Panda("goshko3", "goshko@gmail.com", Gender.Male);
+            Panda panda4 = new Panda("goshko4", "goshko4@gmail.com", Gender.Female);
+            Panda panda5 = new Panda("goshko5", "goshko5@gmail.com", Gender.Female);
+
+            socialnetwork.MakeFriends(panda, panda2);
+            socialnetwork.MakeFriends(panda2, panda3);
+            socialnetwork.MakeFriends(panda3, panda4);
+            socialnetwork.MakeFriends(panda4, panda5);
+            Assert.AreEqual(socialnetwork.ConnectionLevel(panda4, panda2), 2);
         }
     }
 }

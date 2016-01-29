@@ -1,5 +1,6 @@
 ﻿namespace UserInterface
 {
+    using FileInteraction;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -17,7 +18,15 @@
         /// </summary>
         public static void Main()
         {
-            SocialNetwork();
+            SocialNetwork socialnetwork = new SocialNetwork();
+            Panda panda = new Panda("goshko", "goshko@gmail.com", Gender.Male);
+            Panda panda2 = new Panda("goshko2", "goshko@gmail.com", Gender.Male);
+            socialnetwork.AddPanda(panda);
+            socialnetwork.AddPanda(panda2);
+
+            JSONStorageProvider save = new JSONStorageProvider();
+            save.Save(socialnetwork);
+           // SocialNetwork();
         }
 
         /// <summary>

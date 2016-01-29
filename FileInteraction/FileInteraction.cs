@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Panda;
 using System.Text;
+using System.Web.Script.Serialization;
 using System.Threading.Tasks;
 
 namespace FileInteraction
@@ -11,18 +13,21 @@ namespace FileInteraction
     using SocialNetwork;
 
     [Serializable]
-    public class FileInteraction : IPandaSocialNetworkStorageProvider
+    public class JSONStorageProvider : IPandaSocialNetworkStorageProvider
     {
-        // TODO : implement writing
-        public bool Save(SocialNetwork network)
+        public void Save(SocialNetwork network)
         {
-            StreamWriter str = new StreamWriter("..\\..\\..\\Network.txt");
-            using (str)
-            {
-                str.WriteLine();
-            }
+            this.PandaSave(network.GetPandas().ToList());
+        }
 
-            return true;
+        private void PandaSave(List<IPanda> pandas)
+        {
+            var serializer = new JavaScriptSerializer();
+            var serialized = serializer.Serialize(pandas);
+            using (StreamWriter str = new StreamWriter("..\\..\\..\\Pandas.json"))
+            {
+                str.WriteLine(serialized);
+            }
         }
 
         public SocialNetwork Load()

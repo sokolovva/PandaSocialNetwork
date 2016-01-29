@@ -9,7 +9,7 @@
 
     public interface IPandaSocialNetworkStorageProvider
     {
-        bool Save(SocialNetwork network);
+        void Save(SocialNetwork network);
 
         SocialNetwork Load();
     }
