@@ -15,6 +15,8 @@ namespace FileInteraction
     [Serializable]
     public class JSONStorageProvider : IPandaSocialNetworkStorageProvider
     {
+        private const string Filepath = "..\\..\\..\\Pandas.json";
+
         public void Save(SocialNetwork network)
         {
             this.PandaSave(network.GetPandas().ToList());
@@ -24,7 +26,7 @@ namespace FileInteraction
         {
             var serializer = new JavaScriptSerializer();
             var serialized = serializer.Serialize(pandas);
-            using (StreamWriter str = new StreamWriter("..\\..\\..\\Pandas.json"))
+            using (StreamWriter str = new StreamWriter(Filepath))
             {
                 str.WriteLine(serialized);
             }
@@ -32,7 +34,20 @@ namespace FileInteraction
 
         public SocialNetwork Load()
         {
-            throw new NotImplementedException();
+            var socialNetwork = new SocialNetwork();
+            foreach (var panda in this.LoadPanda(Filepath))
+            {
+                socialNetwork.AddPanda(panda);
+            }
+
+            return socialNetwork;
+        }
+
+        private IList<IPanda> LoadPanda(string filePath)
+        {
+            var deserializer = new JavaScriptSerializer();
+            var stillSerialized = File.ReadAllText(filePath);
+            return deserializer.Deserialize<List<IPanda>>(stillSerialized);
         }
     }
 }
