@@ -43,11 +43,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="InputValidation.cs" />
+    <Compile Include="Application.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FileInteraction\FileInteraction.csproj">
+      <Project>{e6faa4da-b31a-4fce-a952-544d21c5ae46}</Project>
+      <Name>FileInteraction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Panda\Panda.csproj">
+      <Project>{4e7471c4-6195-4c15-a914-834865d3e383}</Project>
+      <Name>Panda</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SocialNetwork\SocialNetwork.csproj">
+      <Project>{f99582bf-a74b-46b6-bb74-03498d02dd90}</Project>
+      <Name>SocialNetwork</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
